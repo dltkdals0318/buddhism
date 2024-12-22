@@ -149,8 +149,12 @@ class Particle {
 }
 
 function face(x, y) {
+    let faceScales = [1.2, 1.5, 1.2];
+    let scaleFactor = faceScales[0];
+    
     push();
     translate(x, y);
+    scale(scaleFactor);
 
     let center = createVector(x, y);
     let mouse = createVector(mouseX, mouseY);
