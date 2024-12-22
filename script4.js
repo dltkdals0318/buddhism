@@ -48,8 +48,8 @@ function draw() {
 // 연꽃 주위에서 생성되는 파티클 클래스
 class FloatingParticle {
     constructor(x, y) {
-        this.x = x + random(-150, 150); // 연꽃 주위 넓은 범위에서 생성
-        this.y = y + random(-150, 150);
+        this.x = x + random(-200, 200); // 연꽃 주위 넓은 범위에서 생성
+        this.y = y + random(-200, 200);
         this.vx = random(-2.5, 2.5); // 가로 방향 이동 속도 (더 넓게 퍼짐)
         this.vy = random(-1.5, -0.5); // 위쪽으로 이동
         this.size = random(15, 30); // 꽃잎 크기 (크기 증가)
