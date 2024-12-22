@@ -1,0 +1,127 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.affliction-image {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    cursor: default;
+    z-index: 2;
+    transition: all 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+#message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Nanum Gothic';
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    display: none;
+    z-index: 3;
+    padding: 22px;
+    transition: opacity 0.65s ease;
+    opacity: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+}
+
+.affliction-image-container {
+    position: absolute;
+    width: 60px;
+    height:60px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 1400px;
+    z-index: 1000;
+    font-family: 'Nanum Gothic';
+}
+
+.back-button button {
+    padding: 5px 15px;
+    cursor: pointer;
+    background: transparent;
+    color: rgb(104, 104, 104);
+    border: none;
+    font-size: 20px;
+    transition: transform 0.2s ease;
+    font-family: 'Nanum Gothic';
+}
+
+.back-button button:hover {
+    transform: scale(1.1);
+    color: #000000;
+}
+
+.particle {
+    position: absolute;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 2;
+    animation: fadeOut 8s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(http://fonts.gstatic.com/s/nanumgothic/v26/PN_3Rfi-oW3hYwmKDpxS7F_z-9LZxnthzY0SO7Jj27F-wOe3JI_cmfgf-Q.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+  }

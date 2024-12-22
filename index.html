@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Buddhism</title>
+    <style>
+        html {
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #image-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px; /* 버튼 간격 추가 */
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .pattern {
+            position: relative;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .pattern img {
+            max-width: 100%;
+            max-height: 330px;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+
+        #particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* 클릭을 방해하지 않음 */
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="particle-container"></div>
+
+    <div id="image-container">
+        <a href="buddhism1.html" class="pattern" id="link1">
+            <img src="pattern1.png" alt="pattern1">
+        </a>
+        <a href="buddhism2.html" class="pattern" id="link2">
+            <img src="pattern2.png" alt="pattern2">
+        </a>
+        <a href="buddhism3.html" class="pattern" id="link3">
+            <img src="pattern3.png" alt="pattern3">
+        </a>
+        <a href="buddhism4.html" class="pattern" id="link4">
+            <img src="pattern4.png" alt="pattern4">
+        </a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script>
+        const container = document.getElementById('image-container');
+        const links = Array.from(container.children);
+        const images = [
+            "pattern1.png",
+            "pattern2.png",
+            "pattern3.png",
+            "pattern4.png"
+        ];
+
+        function shuffleImages() {
+            const shuffledImages = images.sort(() => Math.random() - 0.5);
+
+            links.forEach((link, index) => {
+                const img = link.querySelector('img');
+
+                // 이미지 교체
+                img.src = shuffledImages[index];
+
+                // 90도 단위로 회전
+                const rotation = (90 * Math.floor(Math.random() * 4)) % 360; // 0, 90, 180, 270 중 선택
+                img.style.transform = `rotate(${rotation}deg)`;
+            });
+        }
+
+        setInterval(shuffleImages, 2000); // 2초마다 이미지 섞기
+
+        // 파티클 효과
+        const particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = random(width);
+                this.y = random(height);
+                this.vx = random(-1, 1);
+                this.vy = random(-1, 1);
+                this.size = random(1, 5);
+                this.alpha = 255;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= 1;
+
+                // 화면 밖으로 나간 경우 초기화
+                if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                    this.x = random(width);
+                    this.y = random(height);
+                    this.alpha = 255;
+                }
+            }
+
+            display() {
+                noStroke();
+                fill(0, this.alpha); // 검은색 파티클
+                ellipse(this.x, this.y, this.size);
+            }
+        }
+
+        function setup() {
+            const particleContainer = document.getElementById('particle-container');
+            const canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent(particleContainer);
+
+            // 초기 파티클 수 늘리기
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function draw() {
+            clear();
+
+            // 매 프레임마다 파티클 추가 생성
+            if (frameCount % 3 === 0) { // 3프레임마다 1개의 파티클 추가
+                particles.push(new Particle());
+            }
+
+            for (let particle of particles) {
+                particle.update();
+                particle.display();
+            }
+
+            // 오래된 파티클 제거 (최대 300개 유지)
+            particles.splice(0, particles.length - 300);
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+</body>
+</html>

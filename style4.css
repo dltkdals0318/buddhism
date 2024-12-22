@@ -1,0 +1,57 @@
+/* 배경 이미지 설정 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./background.jpg'); /* 배경 이미지 파일 경로 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* 캔버스의 배경을 투명하고 중앙에 배치 */
+canvas {
+    display: block;
+    background-color: transparent; /* 캔버스 배경 투명 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 뒤로 가기 버튼 스타일 */
+.back-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Nanum Gothic';
+}
+
+.back-button button {
+    padding: 5px 15px;
+    cursor: pointer;
+    background: transparent;
+    color: rgb(104, 104, 104);
+    border: none;
+    font-size: 20px;
+    transition: transform 0.2s ease;
+    font-family: 'Nanum Gothic';
+}
+
+.back-button button:hover {
+    transform: scale(1.1);
+    color: #000000;
+}
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(http://fonts.gstatic.com/s/nanumgothic/v26/PN_3Rfi-oW3hYwmKDpxS7F_z-9LZxnthzY0SO7Jj27F-wOe3JI_cmfgf-Q.0.woff2) format('woff2');
+    unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
+}
+
+
