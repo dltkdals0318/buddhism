@@ -33,8 +33,8 @@ body {
 
 .affliction-image {
     position: absolute;
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     cursor: default;
     z-index: 2;
     transition: all 0.3s ease;
@@ -68,8 +68,8 @@ body {
 
 .affliction-image-container {
     position: absolute;
-    width: 80px;
-    height:80px;
+    width: 75px;
+    height:75px;
     cursor: pointer;
     z-index: 3;
 }
