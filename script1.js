@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function moveIcon(img) {
         let posX = parseFloat(img.style.left);
         let posY = parseFloat(img.style.top);
-        const speed = 2.0;
+        const speed = 2.2;
         
         let directionX = Math.random() * 2 - 1;
         let directionY = Math.random() * 2 - 1;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             particle.className = 'particle';
             particle.style.left = x + 'px';
             particle.style.top = y + 'px';
-            particle.style.width = Math.random() * 4.5 + 2 + 'px';
+            particle.style.width = Math.random() * 5 + 2 + 'px';
             particle.style.height = particle.style.width;
             document.getElementById('game-container').appendChild(particle);
             
