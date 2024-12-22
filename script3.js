@@ -54,7 +54,7 @@ function draw() {
     textSize(24); // 폰트 크기 설정
     textFont('Nanum Gothic');
     textAlign(CENTER);
-    text(currentMessage, width / 2, height / 2 + 400); 
+    text(currentMessage, width / 2, height / 2 + 350); 
 
     // 메시지 표시 후 새로운 랜덤 메시지 설정
     if (!showMessage && millis() - fadeStartTime > messageDisplayDuration) {
@@ -89,7 +89,7 @@ class ParticleSystem {
         this.particles = []; // 시스템 내 파티클들
 
         // 초기 파티클 생성
-        for (let i = 0; i < 30; i++) { // 초기 파티클 수 감소
+        for (let i = 0; i < 40; i++) { // 초기 파티클 수 감소
             this.particles.push(new Particle(this.x, this.y));
         }
     }
@@ -125,7 +125,7 @@ class Particle {
         this.angle = random(TWO_PI); // 회전 각도
         this.radius = 0; // 반경 (중심에서 시작)
         this.speed = random(0.5, 1.5); // 반경 증가 속도 (느리게 설정)
-        this.size = random(3, 7); // ��티클 크기
+        this.size = random(5, 8); // 
         this.alpha = 255; // 투명도
     }
 
