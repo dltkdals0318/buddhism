@@ -75,7 +75,7 @@ function draw() {
         fill(0, fadeAlpha);
         textSize(24); // 텍스트 크기 줄임
         textAlign(CENTER);
-        text(currentMessage, width / 2, height / 2 - 200); // 위치를 위로 조정
+        text(currentMessage, width / 2, height / 2 - 300); // 위치를 위로 조정
         pop();
     }
 
