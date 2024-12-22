@@ -15,8 +15,8 @@ html, body {
   
   .back-button {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
     z-index: 1000;
     font-family: 'Nanum Gothic';
 }
