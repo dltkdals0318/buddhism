@@ -54,7 +54,7 @@ function draw() {
     textSize(24); // 폰트 크기 설정
     textFont('Nanum Gothic');
     textAlign(CENTER);
-    text(currentMessage, width / 2, height / 2 + 280); 
+    text(currentMessage, width / 2, height / 2 + 400); 
 
     // 메시지 표시 후 새로운 랜덤 메시지 설정
     if (!showMessage && millis() - fadeStartTime > messageDisplayDuration) {
