@@ -89,8 +89,12 @@ function draw() {
 }
 
 function tree(x, y, h) {
+    let treeScales = [1.2];
+    let ScaleFactor = treeScales[0];
+    
     push();
     translate(x, y);
+    scale(scaleFactor);
     strokeWeight(15);
     stroke(0); 
     line(0, 0, 0, -h);
