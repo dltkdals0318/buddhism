@@ -13,7 +13,7 @@ function setup() {
         { x: width * 0.8, y: height * 0.5 }, // 오른쪽 연꽃
     ];
 
-    flowerScales = [1.5, 1.7, 1.5];
+    flowerScales = [1.7, 1.7, 1.7];
 
     for (let i = 0; i < flowerPositions.length; i++) {
         flowers.push(new Flower(flowerPositions[i].x, flowerPositions[i].y, flowerScales[i]));
