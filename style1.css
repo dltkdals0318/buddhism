@@ -77,7 +77,7 @@ body {
 .back-button {
     position: fixed;
     top: 40px;
-    right: 20px;
+    right: 40px;
     z-index: 1000;
     font-family: 'Nanum Gothic';
 }
